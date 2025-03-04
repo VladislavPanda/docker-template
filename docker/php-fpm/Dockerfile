@@ -1,6 +1,6 @@
 FROM php:8.4-fpm-alpine
 
-WORKDIR /var/www/docker-template
+WORKDIR /var/www/app
 
 RUN apk update \
     apk add --no-cache git curl libpq-dev \

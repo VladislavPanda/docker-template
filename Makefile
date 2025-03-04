@@ -1,16 +1,13 @@
-cp-env:
+install:
 	cp app/.env.example app/.env
 	cp docker/.env.example docker/.env
-
-up:
-	make cp-env
 	cd ./docker && docker compose up --build -d
 
-down:
+stop:
 	cd ./docker && docker compose down
 
 start:
 	cd ./docker && docker compose start
 
-stop:
-	cd ./docker && docker compose stop
+enter-container:
+	docker exec -it docker-template-php-fpm /bin/sh
